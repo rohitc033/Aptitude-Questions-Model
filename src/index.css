@@ -1,0 +1,110 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 267 99% 69%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 10% 3.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 267 99% 69%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 267 99% 69%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 267 99% 69%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.quiz-button {
+  @apply bg-quiz-primary hover:bg-quiz-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+}
+
+.checkbox-container {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-2;
+}
+
+.checkbox-item {
+  @apply flex items-center space-x-2 bg-quiz-light bg-opacity-50 p-3 rounded-md transition-all hover:bg-opacity-80;
+}
+
+.option-button {
+  @apply w-full text-left p-4 rounded-lg border-2 mb-3 transition-all duration-200;
+}
+
+.option-button-default {
+  @apply border-gray-200 hover:border-quiz-primary hover:bg-quiz-light;
+}
+
+.option-button-selected {
+  @apply border-quiz-primary bg-quiz-light;
+}
+
+.option-button-correct {
+  @apply border-green-500 bg-green-100;
+}
+
+.option-button-incorrect {
+  @apply border-red-500 bg-red-100;
+}
